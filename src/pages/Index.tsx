@@ -131,23 +131,20 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
               {
-                name: 'Стандарт',
-                price: '50 000',
-                features: ['До 4 часов', 'Сценарий мероприятия', 'Координация программы', 'Профессиональный микрофон'],
+                name: 'Почасовая оплата',
+                price: '10 000',
+                period: '/ час',
+                features: ['Минимум 2 часа', 'Профессиональное оборудование', 'Координация программы', 'Индивидуальный подход'],
               },
               {
-                name: 'Премиум',
-                price: '85 000',
-                features: ['До 6 часов', 'Индивидуальный сценарий', 'Координация + декор-консультация', 'Оборудование премиум-класса', 'Свадебные игры'],
+                name: 'Всё мероприятие',
+                price: '30 000',
+                period: '',
+                features: ['Неограниченное время', 'Эксклюзивный сценарий', 'Полная координация события', 'Премиум-оборудование', 'Сопровождение весь день'],
                 featured: true,
-              },
-              {
-                name: 'VIP',
-                price: '150 000',
-                features: ['Весь день', 'Эксклюзивный сценарий', 'Полная координация', 'Топовое оборудование', 'Артисты и шоу-программа', 'Видеосъемка'],
               },
             ].map((plan, idx) => (
               <Card
@@ -169,6 +166,7 @@ const Index = () => {
                   <div className="flex items-baseline mb-6">
                     <span className="text-5xl font-serif font-bold text-primary">{plan.price}</span>
                     <span className="text-muted-foreground ml-2">₽</span>
+                    {plan.period && <span className="text-lg text-muted-foreground ml-1">{plan.period}</span>}
                   </div>
                   <ul className="space-y-3 mb-8">
                     {plan.features.map((feature, i) => (
